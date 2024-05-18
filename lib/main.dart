@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/color_widget.dart';
+import 'package:mobile_app/sample_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Mobile App',
-      home: ColorWidget(),
+      home: SampleImage(),
     );
   }
 }

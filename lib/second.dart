@@ -8,7 +8,8 @@ class TemplateWidegt extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container( // select the container and then eract widget (use shift key for select)
+          Container(
+            // select the container and then extract_widget (use shift key for select full container)
             height: 150,
             width: 300,
             margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
