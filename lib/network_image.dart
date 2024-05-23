@@ -5,17 +5,25 @@ class NetworkImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var displaySize = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
+          // physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              CustomNetworkImage(displaySize: displaySize),
-              CustomNetworkImage(displaySize: displaySize),
-              CustomNetworkImage(displaySize: displaySize),
-              CustomNetworkImage(displaySize: displaySize),
-              CustomNetworkImage(displaySize: displaySize),
+              CustomNetworkImage(
+                ImageUrl:
+                    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif',
+              ),
+              CustomNetworkImage(
+                ImageUrl: 'https://picsum.photos/250?image=9',
+              ),
+              CustomNetworkImage(
+                ImageUrl:
+                    'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif',
+              ),
+              // CustomNetworkImage(displaySize: displaySize),
+              // CustomNetworkImage(displaySize: displaySize),
               // CircularProgressIndicator(),
               // LinearProgressIndicator()
             ],
@@ -29,15 +37,16 @@ class NetworkImagePage extends StatelessWidget {
 class CustomNetworkImage extends StatelessWidget {
   const CustomNetworkImage({
     super.key,
-    required this.displaySize,
+    this.ImageUrl,
   });
 
-  final Size displaySize;
+  final String? ImageUrl;
 
   @override
   Widget build(BuildContext context) {
+    var displaySize = MediaQuery.of(context).size;
     return Image.network(
-      'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif',
+      ImageUrl!,
       height: displaySize.height / 3,
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
