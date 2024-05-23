@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/components/custom_network_image.dart';
 
 class NetworkImagePage extends StatelessWidget {
   const NetworkImagePage({super.key});
@@ -7,7 +8,7 @@ class NetworkImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           // physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
@@ -30,33 +31,6 @@ class NetworkImagePage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomNetworkImage extends StatelessWidget {
-  const CustomNetworkImage({
-    super.key,
-    this.ImageUrl,
-  });
-
-  final String? ImageUrl;
-
-  @override
-  Widget build(BuildContext context) {
-    var displaySize = MediaQuery.of(context).size;
-    return Image.network(
-      ImageUrl!,
-      height: displaySize.height / 3,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) return child;
-        return Container(
-            height: displaySize.height / 3,
-            child: const Center(
-                child: Column(
-              children: [CircularProgressIndicator(), Text('Hello')],
-            )));
-      },
     );
   }
 }
