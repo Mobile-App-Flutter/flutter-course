@@ -20,7 +20,9 @@ class SampleImage extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Image.asset(
                 "assets/images/101.jpg",
-                fit: BoxFit.cover, // fit image to the container 
+                fit: BoxFit.cover, // fit image to the container
+                color: Colors.amber,
+                colorBlendMode: BlendMode.colorBurn, // add color to the image
               ),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.black),
