@@ -52,7 +52,10 @@ class CustomNetworkImage extends StatelessWidget {
         if (loadingProgress == null) return child;
         return Container(
             height: displaySize.height / 3,
-            child: Center(child: LinearProgressIndicator()));
+            child: const Center(
+                child: Column(
+              children: [CircularProgressIndicator(), Text('Hello')],
+            )));
       },
     );
   }
